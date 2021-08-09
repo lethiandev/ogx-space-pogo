@@ -1,31 +1,33 @@
-globalvar player_skin_list;
+globalvar player_skin_list, player_skin_queue;
 
 player_skin_list = ds_list_create();
 ds_list_add(player_skin_list, sprPlayerA);
 ds_list_add(player_skin_list, sprPlayerB);
 
-function player_skin_random() {
-  var len = ds_list_size(player_skin_list);
-  var idx = irandom_range(0, len - 1);
-  return player_skin_list[| idx];
+player_skin_queue = ds_list_create();
+
+function player_skin_queue_empty() {
+  return ds_list_empty(player_skin_queue);
 }
 
-function player_skin_is_used(skin) {
-  var len = instance_number(objPlayer);
-  for (var i = 0; i < len; i++) {
-    var player = instance_find(objPlayer, i);
-    if (not variable_instance_exists(player, "skin")) {
-      continue;
-    }
-    if (player.skin == skin) {
-      return true;
-    }
+function player_skin_queue_reset() {
+  ds_list_copy(player_skin_queue, player_skin_list);
+  ds_list_shuffle(player_skin_queue);
+}
+
+function player_skin_queue_pop() {
+  if (not player_skin_queue_empty()) {
+    var skin = player_skin_queue[| 0];
+    ds_list_delete(player_skin_queue, 0);
+    return skin;
   }
-  return false;
+  return noone;
 }
 
-function player_skin_random_uniq() {
-  do var uniq_skin = player_skin_random();
-  until (not player_skin_is_used(uniq_skin));
-  return uniq_skin;
+function player_skin_random() {
+  if (player_skin_queue_empty()) {
+    player_skin_queue_reset();
+  }
+  
+  return player_skin_queue_pop();
 }
