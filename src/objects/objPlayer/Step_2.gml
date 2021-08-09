@@ -10,7 +10,7 @@ if (vspeed >= 0) {
   }
 }
 
-var has_input_jump = keyboard_check_pressed(vk_space);
-if (has_input_jump and on_floor) {
+var is_jumping = input_is_jumping(team);
+if (is_jumping and on_floor) {
   vspeed = -7;
 }

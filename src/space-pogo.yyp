@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"objPlatform","path":"objects/objPlatform/objPlatform.yy",},"order":1,},
+    {"id":{"name":"scrInputAction","path":"scripts/scrInputAction/scrInputAction.yy",},"order":2,},
     {"id":{"name":"scrPlayerSkin","path":"scripts/scrPlayerSkin/scrPlayerSkin.yy",},"order":0,},
     {"id":{"name":"sprPlayerB","path":"sprites/sprPlayerB/sprPlayerB.yy",},"order":1,},
     {"id":{"name":"scrMovement","path":"scripts/scrMovement/scrMovement.yy",},"order":1,},
