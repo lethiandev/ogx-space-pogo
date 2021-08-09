@@ -5,4 +5,4 @@ skin = player_skin_random_uniq();
 team = 0;
 
 // Physics config
-gravity = 0
+gravity = 0.2;
