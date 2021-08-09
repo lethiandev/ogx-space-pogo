@@ -2,7 +2,7 @@
 if (size == 1) {
   draw_sprite(sprite_index, 0, x, y);
 } else {
-  var width = sprite_get_width(sprite_index);
+  var width = sprite_get_width(mask_index);
   var xx = (size - 1) * width;
   draw_sprite(sprite_index, 1, x, y);
   draw_sprite(sprite_index, 3, x + xx, y);
