@@ -1,15 +1,10 @@
 /// @description Pogo movement
-var on_floor = false;
+var on_floor;
 
-if (vspeed >= 0) {
-  var vspd = ceil(vspeed) + 1;
-  if (place_meeting(x, y + vspd, objPlatform)) {
-    movement_move_outside(objPlatform, -1, vspd);
-    on_floor = true;
-    vspeed = 0;
-  }
-}
+// Update movement
+on_floor = movement_move_and_collide(objPlatform);
 
+// Jumping
 var is_jumping = input_is_jumping(team);
 if (is_jumping and on_floor) {
   vspeed = -7;

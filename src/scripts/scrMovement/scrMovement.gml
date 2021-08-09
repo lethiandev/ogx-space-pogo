@@ -1,5 +1,4 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+/// Move outside of the object on collision
 function movement_move_outside(obj, ymin = 0, ymax = 10) {
   for (var i = ymin; i <= ymax; i++) {
     var yy = floor(y) + i;
@@ -8,4 +7,20 @@ function movement_move_outside(obj, ymin = 0, ymax = 10) {
       break;
     }
   }
+}
+
+/// Move and collide with platforms from top
+function movement_move_and_collide(obj) {
+  if (vspeed < 0) {
+    return false;
+  }
+  
+  var vspd = ceil(vspeed) + 1;
+  if (place_meeting(x, y + vspd, obj)) {
+    movement_move_outside(obj, -1, vspd);
+    vspeed = 0;
+    return true;
+  }
+  
+  return false;
 }
