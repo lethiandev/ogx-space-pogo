@@ -20,6 +20,7 @@
     {"instances":[
         {"properties":[
             {"propertyId":{"name":"size","path":"objects/objPlatform/objPlatform.yy",},"objectId":{"name":"objPlatform","path":"objects/objPlatform/objPlatform.yy",},"value":"8","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"move_distance","path":"objects/objPlatform/objPlatform.yy",},"objectId":{"name":"objPlatform","path":"objects/objPlatform/objPlatform.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"objPlatform","path":"objects/objPlatform/objPlatform.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":112.0,"y":448.0,"resourceVersion":"1.0","name":"inst_2E4D643","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"size","path":"objects/objPlatform/objPlatform.yy",},"objectId":{"name":"objPlatform","path":"objects/objPlatform/objPlatform.yy",},"value":"4","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},

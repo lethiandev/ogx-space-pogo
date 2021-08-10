@@ -6,7 +6,9 @@ platform = movement_get_collider(objPlatform);
 on_floor = movement_move_and_collide(objPlatform);
 
 if (platform != noone) {
+  var spd = platform.move_get_speed();
   objCamera.platform_follow(platform);
+  x += spd;
 }
 
 // Jumping
