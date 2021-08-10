@@ -1,7 +1,7 @@
 /// @description Follow players
 var cam = view_get_camera(0);
-var offset = room_height / 2;
-var target = min(height_current, room_height / 2) - offset;
+var offset = room_height / 2 + 32;
+var target = min(height_current, offset) - offset;
 var cy = camera_get_view_y(cam);
 var yy = lerp(cy, target, 0.1);
 
