@@ -18,5 +18,6 @@ for (var i = 0; i < 2; i++) {
     var inst = spawn_instance(i, "Players", objPlayer);
     reorder_instances();
     inst.team = i;
+    objScore.score_add(i, 0);
   }
 }

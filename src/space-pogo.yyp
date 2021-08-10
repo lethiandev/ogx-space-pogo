@@ -6,6 +6,7 @@
     {"id":{"name":"scrPlayerSkin","path":"scripts/scrPlayerSkin/scrPlayerSkin.yy",},"order":0,},
     {"id":{"name":"sprPlayerB","path":"sprites/sprPlayerB/sprPlayerB.yy",},"order":1,},
     {"id":{"name":"scrMovement","path":"scripts/scrMovement/scrMovement.yy",},"order":1,},
+    {"id":{"name":"objScore","path":"objects/objScore/objScore.yy",},"order":4,},
     {"id":{"name":"sprPlatformMask","path":"sprites/sprPlatformMask/sprPlatformMask.yy",},"order":1,},
     {"id":{"name":"scrPlayerSpawn","path":"scripts/scrPlayerSpawn/scrPlayerSpawn.yy",},"order":3,},
     {"id":{"name":"sprPlatformTier0","path":"sprites/sprPlatformTier0/sprPlatformTier0.yy",},"order":0,},

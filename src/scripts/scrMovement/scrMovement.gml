@@ -15,15 +15,14 @@ function movement_get_collider(obj) {
     return noone;
   }
   
-  var vspd = ceil(vspeed) + 1;
+  var vspd = max(1, ceil(vspeed) + 1);
   var inst = instance_place(x, y + vspd, obj);
   return inst;
 }
 
 /// Move and collide with platforms from top
 function movement_move_and_collide(obj) {
-  var inst = movement_get_collider(obj);
-  
+  var inst = movement_get_collider(obj);  
   if (inst != noone) {
     var vspd = ceil(vspeed) + 1;
     movement_move_outside(obj, -1, vspd);

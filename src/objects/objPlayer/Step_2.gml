@@ -9,6 +9,15 @@ if (platform != noone) {
   var spd = platform.move_get_speed();
   objCamera.platform_follow(platform);
   x += spd;
+  
+  if (height_last != noone) {
+    if (platform.y < height_last) {
+      objScore.score_add(team, 10);
+    }
+    height_last = min(height_last, platform.y);
+  } else {
+    height_last = platform.y;
+  }
 }
 
 // Jumping
