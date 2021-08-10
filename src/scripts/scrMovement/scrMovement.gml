@@ -9,14 +9,23 @@ function movement_move_outside(obj, ymin = 0, ymax = 10) {
   }
 }
 
-/// Move and collide with platforms from top
-function movement_move_and_collide(obj) {
+// Detect standing on the platform
+function movement_get_collider(obj) {
   if (vspeed < 0) {
-    return false;
+    return noone;
   }
   
   var vspd = ceil(vspeed) + 1;
-  if (place_meeting(x, y + vspd, obj)) {
+  var inst = instance_place(x, y + vspd, obj);
+  return inst;
+}
+
+/// Move and collide with platforms from top
+function movement_move_and_collide(obj) {
+  var inst = movement_get_collider(obj);
+  
+  if (inst != noone) {
+    var vspd = ceil(vspeed) + 1;
     movement_move_outside(obj, -1, vspd);
     vspeed = 0;
     return true;
