@@ -21,6 +21,7 @@
     {"id":{"name":"sprObstacleCannon","path":"sprites/sprObstacleCannon/sprObstacleCannon.yy",},"order":2,},
     {"id":{"name":"bgTier3","path":"sprites/bgTier3/bgTier3.yy",},"order":3,},
     {"id":{"name":"sprPogoStick","path":"sprites/sprPogoStick/sprPogoStick.yy",},"order":2,},
+    {"id":{"name":"objBackground","path":"objects/objBackground/objBackground.yy",},"order":5,},
     {"id":{"name":"sprPlatformTier2","path":"sprites/sprPlatformTier2/sprPlatformTier2.yy",},"order":3,},
     {"id":{"name":"sprPlatformTier3","path":"sprites/sprPlatformTier3/sprPlatformTier3.yy",},"order":4,},
     {"id":{"name":"sprPlayerA","path":"sprites/sprPlayerA/sprPlayerA.yy",},"order":0,},
