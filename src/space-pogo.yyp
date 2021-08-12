@@ -20,6 +20,7 @@
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"order":0,},
     {"id":{"name":"bgTier0","path":"sprites/bgTier0/bgTier0.yy",},"order":0,},
     {"id":{"name":"sprObstacleBall","path":"sprites/sprObstacleBall/sprObstacleBall.yy",},"order":1,},
+    {"id":{"name":"sprScoreSmallFont","path":"sprites/sprScoreSmallFont/sprScoreSmallFont.yy",},"order":6,},
     {"id":{"name":"sprObstacleCannon","path":"sprites/sprObstacleCannon/sprObstacleCannon.yy",},"order":2,},
     {"id":{"name":"bgTier3","path":"sprites/bgTier3/bgTier3.yy",},"order":3,},
     {"id":{"name":"sprPogoStick","path":"sprites/sprPogoStick/sprPogoStick.yy",},"order":2,},
