@@ -26,6 +26,7 @@ function movement_move_and_collide(obj) {
   if (inst != noone) {
     var vspd = ceil(vspeed) + 1;
     movement_move_outside(obj, -1, vspd);
+    hspeed = 0;
     vspeed = 0;
     return true;
   }
