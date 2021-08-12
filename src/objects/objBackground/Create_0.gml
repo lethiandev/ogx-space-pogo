@@ -6,7 +6,13 @@ background_current = bgTier0;
 background_next = noone;
 timer = 0;
 
-function update_background(surf, spr) {
+background_tier_map = ds_map_create();
+background_tier_map[? sprPlatformTier0] = bgTier0;
+background_tier_map[? sprPlatformTier1] = bgTier1;
+background_tier_map[? sprPlatformTier2] = bgTier2;
+background_tier_map[? sprPlatformTier3] = bgTier3;
+
+function background_update(surf, spr) {
   var ww = room_width;
   var hh = room_height / 2;
   
@@ -21,6 +27,20 @@ function update_background(surf, spr) {
   surface_reset_target();
 }
 
+function background_get_tier(spr) {
+  if (ds_map_exists(background_tier_map, spr)) {
+    return background_tier_map[? spr];
+  }
+  return noone;
+}
+
+function background_update_tier(spr) {
+  var tier = background_get_tier(spr);
+  if (background_current != tier) {
+    background_next = tier;
+  }
+}
+
 function swap_surfaces() {
   var prev = background_current_surface;
   background_current_surface = background_next_surface;
@@ -28,4 +48,4 @@ function swap_surfaces() {
 }
 
 // Update initial background surface
-update_background(background_current_surface, background_current);
+background_update(background_current_surface, background_current);
