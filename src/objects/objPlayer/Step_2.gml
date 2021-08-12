@@ -31,3 +31,10 @@ if (is_jumping and on_floor) {
   hspeed = lengthdir_x(7, angle);
   vspeed = lengthdir_y(7, angle);
 }
+
+// Fall off the screen
+var cam = view_get_camera(0);
+var camy = camera_get_view_y(cam);
+if (y > camy + room_height) {
+  instance_destroy();
+}
