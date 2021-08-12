@@ -1,7 +1,7 @@
 /// @description Switch background surfaces
 if (background_next != noone) {
   if (timer == 0) {
-    update_background(background_next_surface, background_next);
+    background_update(background_next_surface, background_next);
   }
   
   timer = min(1, timer + 0.05);

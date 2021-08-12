@@ -10,6 +10,7 @@ if (on_platform != noone) {
   if (height_last != noone) {
     if (on_platform.y < height_last) {
       objScore.score_add(team, 10);
+      objBackground.background_update_tier(on_platform.sprite_index);
     }
     height_last = min(height_last, on_platform.y);
   } else {
