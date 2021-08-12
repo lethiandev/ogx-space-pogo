@@ -1,6 +1,12 @@
 /// @description Setup score system
+globalvar high_score;
+
 score_map = ds_map_create();
 score_font = font_add_sprite(sprScoreFont, ord("0"), false, 0);
+
+ini_open("persistent.ini");
+high_score = real(ini_read_string("scoring", "highscore", 0));
+ini_close();
 
 var cam = view_get_camera(0);
 var camw = camera_get_view_width(cam);
