@@ -17,3 +17,9 @@ function input_is_jumping(player) {
     return keyboard_check_pressed(ord("W"));
   }
 }
+
+function input_is_jumping_any() {
+  var p1 = input_is_jumping(0);
+  var p2 = input_is_jumping(1);
+  return p1 || p2;
+}
