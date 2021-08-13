@@ -1,41 +1,53 @@
 /// @description Pogo movement
-on_platform = movement_get_collider(objPlatform);
-on_floor = movement_move_and_collide(objPlatform);
-
-if (on_platform != noone) {
-  var spd = on_platform.move_get_speed();
-  objCamera.platform_follow(on_platform);
-  x += spd;
+if (instance_exists(platform_last)) {
+  var yy = platform_last.y;
+  var xspeed = platform_last.move_get_speed();
   
-  if (height_last != noone) {
-    if (on_platform.y < height_last) {
+  x = x + xspeed;
+  y = yy - 13;
+  hspeed = 0;
+  vspeed = 0;
+  
+  if (input_is_jumping(team)) {
+    var angle = crosshair_get_angle();
+    hspeed = lengthdir_x(7, angle);
+    vspeed = lengthdir_y(7, angle);
+    platform_last = noone;
+  }
+} else if (vspeed >= 0) {
+  var xx = x + round(hspeed);
+  var yy = y + ceil(vspeed);
+  
+  var platform = instance_place(xx, yy, objPlatform);
+  if (platform != noone) {
+    objCamera.platform_follow(platform);
+    platform_last = platform;
+  }
+  
+  if (platform != noone) {
+    if (height_last > platform.y) {
+      objBackground.background_update_tier(platform.sprite_index);
       objScore.score_add(team, 10);
-      objBackground.background_update_tier(on_platform.sprite_index);
     }
-    height_last = min(height_last, on_platform.y);
-  } else {
-    height_last = on_platform.y;
+    if (height_last == noone) {
+      height_last = room_height;
+    }
+    height_last = min(height_last, platform.y);
   }
 }
 
 // Bounce on screen edges
-var left_edge = x < 0 and hspeed < 0;
-var right_edge = x > room_width and hspeed > 0;
-if (left_edge or right_edge) {
+var is_bounce_left = x < 0 and hspeed < 0;
+var is_bounce_right = x > room_width and hspeed > 0;
+
+if (is_bounce_left or is_bounce_right) {
   hspeed *= -1;
 }
 
-// Jumping
-var is_jumping = input_is_jumping(team);
-if (is_jumping and on_floor) {
-  var angle = crosshair_get_angle();
-  hspeed = lengthdir_x(7, angle);
-  vspeed = lengthdir_y(7, angle);
-}
-
-// Fall off the screen
+// Destroy falling player
 var cam = view_get_camera(0);
 var camy = camera_get_view_y(cam);
+
 if (y > camy + room_height) {
   instance_destroy();
 }
