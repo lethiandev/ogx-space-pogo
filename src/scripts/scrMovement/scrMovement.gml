@@ -1,10 +1,12 @@
 /// Move outside of the object on collision
-function movement_move_outside(obj, ymin = 0, ymax = 10) {
-  for (var i = ymin; i <= ymax; i++) {
-    var yy = floor(y) + i;
-    if (place_meeting(x, yy, obj)) {
-      y = yy - 1;
-      break;
+function movement_move_outside(obj) {
+  var yy = ceil(vspeed) + 1;
+  
+  for (var i = -1; i < yy; i++) {
+    var off = ceil(y) + i;
+    if (place_meeting(x, off, obj)) {
+      y = off - 1;
+      return;
     }
   }
 }
@@ -15,8 +17,9 @@ function movement_get_collider(obj) {
     return noone;
   }
   
-  var vspd = max(1, ceil(vspeed) + 1);
-  var inst = instance_place(x, y + vspd, obj);
+  var xx = x + ceil(hspeed);
+  var yy = y + ceil(vspeed);
+  var inst = instance_place(xx, yy, obj);
   return inst;
 }
 
@@ -24,8 +27,7 @@ function movement_get_collider(obj) {
 function movement_move_and_collide(obj) {
   var inst = movement_get_collider(obj);  
   if (inst != noone) {
-    var vspd = ceil(vspeed) + 1;
-    movement_move_outside(obj, -1, vspd);
+    movement_move_outside(obj);
     hspeed = 0;
     vspeed = 0;
     return true;
