@@ -18,3 +18,11 @@ function platform_create_spikes(platform) {
   spikes.y = platform.y;
   return spikes
 }
+
+function platform_create_shuriken(platform) {
+  var shuriken = instance_create_layer(0, 0, "Platforms", objShuriken);
+  shuriken.move_direction = choose(-1, 1);
+  shuriken.x = irandom(room_width);
+  shuriken.y = platform.y - 48;
+  return shuriken;
+}
