@@ -4,7 +4,7 @@ if (instance_exists(platform_last)) {
   var xspeed = platform_last.move_get_speed();
   
   x = x + xspeed;
-  y = yy - 13;
+  y = yy - 12;
   hspeed = 0;
   vspeed = 0;
   
