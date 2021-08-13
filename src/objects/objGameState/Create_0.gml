@@ -1,5 +1,6 @@
 /// @description Initialize game state
 is_game_over = false;
+is_ready_state = true;
 
 function player_is_alive() {
   return instance_number(objPlayer) > 1;

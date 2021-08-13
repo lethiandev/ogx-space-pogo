@@ -1,4 +1,6 @@
 /// @description Reset game state
+is_ready_state = instance_exists(objPlayerSpawn);
+
 if (not is_game_over) {
   return;
 }
