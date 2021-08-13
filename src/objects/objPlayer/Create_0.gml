@@ -3,14 +3,14 @@ randomize();
 skin = player_skin_random();
 height_last = noone;
 
-angle_timer = 0.75;
-
-on_platform = noone;
-on_floor = false;
+crosshair_timer = 0.75;
+platform_last = noone;
 
 function crosshair_get_angle() {
-  var factor = min(0.5, angle_timer) - max(0, angle_timer - 0.5);
-  return 45 + 90 * factor * 2;
+  var crossmin = min(0.5, crosshair_timer);
+  var crossmax = max(0, crosshair_timer - 0.5);
+  var factor = (crossmin - crossmax) * 2;
+  return 45 + 90 * factor;
 }
 
 // Physics config
