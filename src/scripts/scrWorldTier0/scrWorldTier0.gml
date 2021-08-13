@@ -2,7 +2,11 @@ globalvar last_platform;
 last_platform = noone;
 
 function generate_world_tier_0(height, index) {
-  var platform = create_world_tier_0_platform();
+  last_platform = tier_0_create_platform(height, index);
+}
+
+function tier_0_create_platform(height, index) {
+  var platform = platform_create(sprPlatformTier0);
   var size = irandom_range(4, 6);
   
   var orient_x = room_width / 2;
@@ -24,12 +28,5 @@ function generate_world_tier_0(height, index) {
   var xx = platform_get_edge_x(platform);
   platform.x = max(0, platform.x - xx);
   
-  last_platform = platform;
   return platform;
-}
-
-function create_world_tier_0_platform() {
-  var inst = instance_create_layer(0, 0, "Platforms", objPlatform);
-  inst.sprite_index = sprPlatformTier0;
-  return inst;
 }
