@@ -2,6 +2,7 @@
 globalvar high_score;
 
 score_map = ds_map_create();
+score_beaten = false;
 
 ini_open("persistent.ini");
 high_score = real(ini_read_string("scoring", "highscore", 0));
