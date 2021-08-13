@@ -1,4 +1,6 @@
 /// @description Update platform movement
+image_xscale = size;
+
 if (move_distance <= 0) {
   return;
 }
