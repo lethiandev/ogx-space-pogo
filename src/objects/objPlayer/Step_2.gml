@@ -1,5 +1,5 @@
 /// @description Pogo movement
-if (platform_last != noone) {
+if (instance_exists(platform_last)) {
   var yy = platform_last.y;
   var xspeed = platform_last.move_get_speed();
   
