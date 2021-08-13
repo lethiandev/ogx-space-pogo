@@ -17,6 +17,7 @@ for (var i = 0; i < 2; i++) {
   } else if (is_jumping) {
     var inst = spawn_instance(i, "Players", objPlayer);
     reorder_instances();
+    inst.skin = player_skin_list[| i];
     inst.team = i;
     objScore.score_add(i, 0);
   }
