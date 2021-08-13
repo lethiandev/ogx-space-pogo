@@ -7,3 +7,8 @@ pogo_y += pogo_velocity_y;
 
 body_velocity_y += 0.1;
 pogo_velocity_y += 0.1;
+
+// Always follow bottom of the screen
+var cam = view_get_camera(0);
+var camy = camera_get_view_y(cam);
+y = room_height + camy;
