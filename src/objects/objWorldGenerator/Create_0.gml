@@ -6,7 +6,7 @@ ds_map_set(tier_map, 2, generate_world_tier_2);
 ds_map_set(tier_map, 3, generate_world_tier_3);
 
 tier_increment = 16 * 6;
-tier_elevation = tier_increment * 3;
+tier_elevation = tier_increment * 14;
 
 tier_current_height = 48;
 tier_last_script = noone;
