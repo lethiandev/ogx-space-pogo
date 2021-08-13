@@ -18,8 +18,8 @@ if (instance_exists(platform_last)) {
   
   if (input_is_jumping(team)) {
     var angle = crosshair_get_angle();
-    hspeed = lengthdir_x(7, angle);
-    vspeed = lengthdir_y(7, angle);
+    hspeed = lengthdir_x(7.2, angle);
+    vspeed = lengthdir_y(7.2, angle);
     platform_last = noone;
   }
 } else if (vspeed >= 0) {
@@ -27,6 +27,9 @@ if (instance_exists(platform_last)) {
   var yy = y + ceil(vspeed);
   
   var platform = instance_place(xx, yy, objPlatform);
+  if (platform != noone and platform.y < y + 8) {
+    platform = noone;
+  }
   if (platform != noone) {
     objCamera.platform_follow(platform);
     platform_last = platform;
