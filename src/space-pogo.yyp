@@ -34,6 +34,7 @@
     {"id":{"name":"scrWorldTier1","path":"scripts/scrWorldTier1/scrWorldTier1.yy",},"order":1,},
     {"id":{"name":"sprPlatformTier2","path":"sprites/sprPlatformTier2/sprPlatformTier2.yy",},"order":3,},
     {"id":{"name":"sprPlatformTier3","path":"sprites/sprPlatformTier3/sprPlatformTier3.yy",},"order":4,},
+    {"id":{"name":"objShuriken","path":"objects/objShuriken/objShuriken.yy",},"order":9,},
     {"id":{"name":"scrWorldTier2","path":"scripts/scrWorldTier2/scrWorldTier2.yy",},"order":2,},
     {"id":{"name":"sprPlayerA","path":"sprites/sprPlayerA/sprPlayerA.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
