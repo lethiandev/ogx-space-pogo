@@ -14,6 +14,7 @@
     {"id":{"name":"sprPlatformMask","path":"sprites/sprPlatformMask/sprPlatformMask.yy",},"order":1,},
     {"id":{"name":"bgTier1","path":"sprites/bgTier1/bgTier1.yy",},"order":1,},
     {"id":{"name":"scrPlayerSpawn","path":"scripts/scrPlayerSpawn/scrPlayerSpawn.yy",},"order":3,},
+    {"id":{"name":"scrPlatformUtils","path":"scripts/scrPlatformUtils/scrPlatformUtils.yy",},"order":5,},
     {"id":{"name":"sprPlatformTier0","path":"sprites/sprPlatformTier0/sprPlatformTier0.yy",},"order":0,},
     {"id":{"name":"sprScoreFont","path":"sprites/sprScoreFont/sprScoreFont.yy",},"order":4,},
     {"id":{"name":"sprPlatformTier1","path":"sprites/sprPlatformTier1/sprPlatformTier1.yy",},"order":2,},
