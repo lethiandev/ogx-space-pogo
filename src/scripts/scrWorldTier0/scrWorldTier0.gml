@@ -2,10 +2,8 @@ globalvar last_platform;
 last_platform = noone;
 
 function generate_world_tier_0(height, index) {
-  var tilew = sprite_get_width(sprPlatformMask);
   var platform = create_world_tier_0_platform();
   var size = irandom_range(4, 6);
-  var width = size * tilew;
   
   var orient_x = room_width / 2;
   if (instance_exists(last_platform)) {
