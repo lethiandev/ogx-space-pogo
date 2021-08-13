@@ -1,10 +1,10 @@
 function generate_world_tier_3(height, index){
   var platform = noone;
   
-  if (irandom(100) < 15) {
+  if (irandom(100) < 25) {
     platform = tier_0_create_platform(height, index);
     platform.sprite_index = sprPlatformTier3;
-  } else if (irandom(100) < 30) {
+  } else if (irandom(100) < 40) {
     platform = tier_1_create_platform(height, index);
     platform[0].sprite_index = sprPlatformTier3;
     platform[1].sprite_index = sprPlatformTier3;
@@ -22,6 +22,14 @@ function generate_world_tier_3(height, index){
       platform_create_spikes(choosen);
     }
     platform = choose(platform[0], platform[1]);
+  }
+  
+  if (irandom(100) < 50) {
+    platform_create_shuriken(platform);
+  }
+  
+  if (irandom(100) < 50) {
+    platform_create_shuriken(platform);
   }
   
   last_platform = platform;

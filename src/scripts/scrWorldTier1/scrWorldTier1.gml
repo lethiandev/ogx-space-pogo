@@ -1,13 +1,23 @@
 function generate_world_tier_1(height, index){
+  var platform = noone;
+  
   if (irandom(100) < 50) {
-    var platform = tier_0_create_platform(height, index);
+    platform = tier_0_create_platform(height, index);
     platform.sprite_index = sprPlatformTier1;
-    last_platform = platform;
-    return;
+  } else {
+    platform = tier_1_create_platform(height, index);
+    platform = choose(platform[0], platform[1]);
   }
   
-  var platforms = tier_1_create_platform(height, index);
-  last_platform = choose(platforms[0], platforms[1]);
+  if (irandom(100) < 30) {
+    platform_create_spikes(platform);
+  }
+  
+  if (irandom(100) < 70 or (irandom(100) < 50 and index > 6)) {
+    platform_create_shuriken(platform);
+  }
+  
+  last_platform = platform;
 }
 
 function tier_1_create_platform(height, index) {
