@@ -11,3 +11,10 @@ function platform_create(spr) {
   inst.sprite_index = spr;
   return inst;
 }
+
+function platform_create_spikes(platform) {
+  var spikes = instance_create_layer(0, 0, "Platforms", objSpikes);
+  spikes.x = platform.x + irandom(platform.size - 1) * 18;
+  spikes.y = platform.y;
+  return spikes
+}
