@@ -5,6 +5,7 @@ height_last = noone;
 
 crosshair_timer = 0.75;
 platform_last = noone;
+platform_timer = 0;
 
 function crosshair_get_angle() {
   var crossmin = min(0.5, crosshair_timer);
