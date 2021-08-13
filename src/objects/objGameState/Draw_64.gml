@@ -5,6 +5,7 @@ if (is_game_over) {
   guih = display_get_gui_height();
   draw_set_valign(fa_middle);
   draw_set_halign(fa_center);
+  draw_set_font(font_default);
   draw_text(guiw / 2, guih / 2, "Game Over");
 }
 

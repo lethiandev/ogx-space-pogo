@@ -2,8 +2,6 @@
 globalvar high_score;
 
 score_map = ds_map_create();
-score_font = font_add_sprite(sprScoreFont, ord("0"), false, 0);
-score_small_font = font_add_sprite(sprScoreSmallFont, ord("0"), false, 0);
 
 ini_open("persistent.ini");
 high_score = real(ini_read_string("scoring", "highscore", 0));
@@ -21,10 +19,10 @@ function score_add(team, val) {
   score_map[? team] += val;
 }
 
-function score_draw(val, x, y, font = score_font) {
+function score_draw(val, x, y, prefix = "", font = font_default) {
   var valstr = string_pad(val, 8);
   draw_set_font(font);
-  draw_text(x, y, valstr);
+  draw_text(x, y, prefix + valstr);
   draw_set_font(-1);
 }
 
