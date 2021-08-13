@@ -12,7 +12,7 @@ function player_skin_queue_empty() {
 
 function player_skin_queue_reset() {
   ds_list_copy(player_skin_queue, player_skin_list);
-  ds_list_shuffle(player_skin_queue);
+  //ds_list_shuffle(player_skin_queue);
 }
 
 function player_skin_queue_pop() {
