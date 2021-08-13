@@ -1,10 +1,18 @@
 /// @description Pogo movement
+if(vspeed > 0) {
+  var inst = instance_place(x + hspeed, y + vspeed, objSpikes)
+  if (inst != noone and inst.y > y + 12) {
+    instance_destroy();
+    return;
+  }
+}
+
 if (instance_exists(platform_last)) {
   var yy = platform_last.y;
   var xspeed = platform_last.move_get_speed();
   
   x = x + xspeed;
-  y = yy - 13;
+  y = yy - 12;
   hspeed = 0;
   vspeed = 0;
   
