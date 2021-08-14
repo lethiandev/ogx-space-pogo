@@ -17,8 +17,13 @@ function background_update(surf, spr) {
   var hh = room_height / 2;
   
   surface_set_target(surf);
-  draw_sprite_stretched(spr, 0, 0, 0, ww, hh);
-  draw_sprite_stretched(spr, 2, 0, hh, ww, hh);
+  var cells = ceil(room_width / 24) * ceil(room_height / 2 / 24);
+  for (var i = 0; i < cells; i++) {
+    var xx = floor(i % ceil(room_width / 24)) * 24;
+    var yy = floor(i / ceil(room_width / 24)) * 24 - 4;
+    draw_sprite(spr, 0, xx, yy);
+    draw_sprite(spr, 2, xx, yy + hh);
+  }
   for (var i = 0; i < 15; i++) {
     var xx = i * sprite_get_width(spr);
     var yy = sprite_get_height(spr) / 2;
