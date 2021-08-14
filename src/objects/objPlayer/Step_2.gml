@@ -57,7 +57,7 @@ var is_bounce_left = x < 0 and hspeed < 0;
 var is_bounce_right = x > room_width and hspeed > 0;
 
 if (is_bounce_left or is_bounce_right) {
-  var snd = audio_play_sound(sndPlatform, 0, false);
+  var snd = audio_play_sound(sndBounce, 0, false);
   audio_sound_pitch(snd, 1.0 - random(0.15));
   hspeed *= -1;
 }
