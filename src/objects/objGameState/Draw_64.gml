@@ -17,7 +17,7 @@ if (is_ready_state) {
 
 if (is_ready_state) {
   var scale = min(1, anim_timer + 0.6);
-  var yy = 12 * sin(anim_timer * pi);
+  var yy = 6 * sin(anim_timer);
   draw_sprite_ext(sprLogo, 0, guiw/2, guih/2 - guih/4 - yy, scale, scale, 0, c_white, 1);
 }
 
