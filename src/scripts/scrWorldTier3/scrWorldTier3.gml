@@ -41,13 +41,19 @@ function tier_3_create_platform(height, index) {
   platform1 = platform_create(sprPlatformTier3);
   platform1.size = choose(1, 2);
   platform1.move_distance = irandom(room_width / 2 - 2 * 18);
+  if (platform1.move_distance < 32) {
+    platform1.move_distance = 0;
+  }
   platform1.x = irandom_range(0, room_width / 2) + room_width / 2;
   platform1.x -= platform_get_edge_x(platform1) + room_width / 2;
   platform1.y = height;
   
   platform2 = platform_create(sprPlatformTier3);
   platform2.size = choose(1, 2);
-  platform1.move_distance = irandom(room_width / 2 - 2 * 18);
+  platform2.move_distance = irandom(room_width / 2 - 2 * 18);
+  if (platform2.move_distance < 32) {
+    platform2.move_distance = 0;
+  }
   platform2.x = irandom_range(room_width / 2, room_width);
   platform2.x -= platform_get_edge_x(platform2);
   platform2.y = height;
