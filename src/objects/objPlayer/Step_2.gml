@@ -21,6 +21,8 @@ if (instance_exists(platform_last)) {
     hspeed = lengthdir_x(7.2, angle);
     vspeed = lengthdir_y(7.2, angle);
     platform_last = noone;
+    var snd = audio_play_sound(sndJump, 0, false);
+    audio_sound_pitch(snd, 1.0 - random(0.15));
   }
 } else if (vspeed >= 0) {
   var xx = x + round(hspeed);
@@ -30,9 +32,12 @@ if (instance_exists(platform_last)) {
   if (platform != noone and platform.y < y + 8) {
     platform = noone;
   }
+  
   if (platform != noone) {
     objCamera.platform_follow(platform);
     platform_last = platform;
+    var snd = audio_play_sound(sndPlatform, 0, false);
+    audio_sound_pitch(snd, 1.0 - random(0.15));
   }
   
   if (platform != noone) {
@@ -52,6 +57,8 @@ var is_bounce_left = x < 0 and hspeed < 0;
 var is_bounce_right = x > room_width and hspeed > 0;
 
 if (is_bounce_left or is_bounce_right) {
+  var snd = audio_play_sound(sndPlatform, 0, false);
+  audio_sound_pitch(snd, 1.0 - random(0.15));
   hspeed *= -1;
 }
 

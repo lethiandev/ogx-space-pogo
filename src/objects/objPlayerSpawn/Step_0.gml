@@ -20,5 +20,6 @@ for (var i = 0; i < 2; i++) {
     inst.skin = player_skin_list[| i];
     inst.team = i;
     objScore.score_add(i, 0);
+    audio_play_sound(sndSpawn, 0, false);
   }
 }
