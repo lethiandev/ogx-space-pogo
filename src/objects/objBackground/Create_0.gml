@@ -49,3 +49,4 @@ function swap_surfaces() {
 
 // Update initial background surface
 background_update(background_current_surface, background_current);
+background_update(background_next_surface, background_current);

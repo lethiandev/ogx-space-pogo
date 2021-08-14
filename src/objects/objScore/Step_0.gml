@@ -9,6 +9,7 @@ for (var i = 0; i < len; i++) {
 
 if (max_score != high_score) {
   high_score = max_score;
+  score_beaten = true;
   ini_open("persistent.ini");
   ini_write_string("scoring", "highscore", string(high_score));
   ini_close();
