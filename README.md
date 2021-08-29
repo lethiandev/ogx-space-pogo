@@ -4,6 +4,12 @@ Play solo or in duo by jumping on the ledges using a space pogo through four vis
 
 Game made for [Opera GX Game Jam](https://gamejolt.com/c/gamemaker/ogxgj).
 
+Play the game hosted on GameJolt website -
+<br>https://lethiandev.github.io/ogx-space-pogo/
+
+Alternatively the game is also hosted on GitHub Pages-
+<br>https://lethiandev.github.io/ogx-space-pogo/
+
 **Controls:**
 <br>Player 1 - Arrows, space bar, mouse buttons - Jump
 <br>Player 2 - W, A, S, D keys - Jump
